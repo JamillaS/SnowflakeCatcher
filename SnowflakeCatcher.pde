@@ -12,8 +12,11 @@ void setup()
 }
 void draw()
 {
+ 
   background(197);
   
+  fill(197);
+  rect(-100, 1000, 1000, 1000);
   for(int i = 0; i < catcher.length; i++)
   {
 
@@ -31,6 +34,7 @@ void mouseDragged()
 {
   if(mousePressed)
   {
+    //stroke(0);
     fill(0);
     ellipse(mouseX,mouseY, 10, 10);
 
@@ -59,19 +63,22 @@ class Snowflake
   }
   void lookDown()
   {
-    if(y > -10 && y < 410)
+    if(y > -20 && y < 420)
     {
       
-      if(get(x,y) != color(0,0,0))
-        isMoving = true;
-    }
-    else if(get(x,y) == color(0, 0, 0))
+      if(get(x,y+5) != color(197))
         isMoving = false;
-    else
-      isMoving = false;
+      else if(get(x,y+5) != color(0))
+        isMoving = true;
+      else
+        isMoving = false;
+    }
+    
   }
+    
   void erase()
   {
+    noStroke();
     fill(255);
     ellipse(x,y,7,7);
   }
@@ -87,7 +94,7 @@ class Snowflake
   }
   void wrap()
   {
-    if(y > 405)
+    if(y > 410 )
     {
       y = 0;
       x = (int)(Math.random() * 400);
