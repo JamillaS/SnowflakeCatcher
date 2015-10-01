@@ -2,7 +2,7 @@ Snowflake[] catcher;
 void setup()
 {
   
-  size(400, 400);
+  size(400,400);
   catcher = new Snowflake[100];
   for(int i = 0; i < catcher.length; i ++)
   {
@@ -14,7 +14,7 @@ void draw()
 {
  
   background(197);
-  
+ mouseDragged();
   fill(197);
   rect(-100, 1000, 1000, 1000);
   for(int i = 0; i < catcher.length; i++)
@@ -32,13 +32,10 @@ void draw()
 }
 void mouseDragged()
 {
-  if(mousePressed)
-  {
-    //stroke(0);
+  
+    stroke(0);
     fill(0);
     ellipse(mouseX,mouseY, 10, 10);
-
-  }
 }
 
 class Snowflake
@@ -58,7 +55,7 @@ class Snowflake
     
     fill(255);
     ellipse(x,y,5,5);
-
+    //mouseDragged();
 
   }
   void lookDown()
@@ -80,11 +77,11 @@ class Snowflake
   {
     noStroke();
     fill(255);
-    ellipse(x,y,7,7);
+    ellipse(x,y,5,5);
   }
   void move()
   {
-    mouseDragged();
+    //mouseDragged();
     if(isMoving == true)
     
       y = y + 1;
@@ -94,7 +91,7 @@ class Snowflake
   }
   void wrap()
   {
-    if(y > 410 )
+    if(y == 393 )
     {
       y = 0;
       x = (int)(Math.random() * 400);
