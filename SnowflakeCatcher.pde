@@ -3,7 +3,7 @@ void setup()
 {
   background(197);
   size(400,400);
-  catcher = new Snowflake[200];
+  catcher = new Snowflake[100];
   for(int i = 0; i < catcher.length; i ++)
   {
     catcher[i] = new Snowflake();
@@ -74,7 +74,7 @@ class Snowflake
   {
     noStroke();
     fill(197);
-    ellipse(x,y,6,6);
+    ellipse(x,y,5,5);
   }
   void move()
   {
@@ -88,7 +88,7 @@ class Snowflake
   }
   void wrap()
   {
-    if(y == 393 )
+    if(y == 400 )
     {
       y = 0;
       x = (int)(Math.random() * 400);
